@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+
+printf "module SshKeySwitcher\n  VERSION = \"$VERSION\"\nend\n" > ./lib/ssh_key_switcher/version.rb
+bundle
+git add Gemfile.lock lib/ssh_key_switcher/version.rb
+git commit -m "Bump version for $VERSION"
+git push
+git tag v$VERSION
+git push --tags
+gem build ssh_key_switcher.gemspec
+gem push "ssh_key_switcher-$VERSION.gem" --host https://rubygems.org
+rm "ssh_key_switcher-$VERSION.gem"
