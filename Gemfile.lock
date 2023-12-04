@@ -58,6 +58,3 @@ DEPENDENCIES
   rake (~> 13.0)
   rubocop (~> 1.21)
   ssh_key_switcher!
-
-BUNDLED WITH
-   2.1.4

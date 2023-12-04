@@ -1,6 +1,6 @@
 # SSH Key Switcher
 
-Simple and efficient Ruby gem for managing and switching between OpenSSH keys seamlessly.
+A simple and efficient Ruby gem for managing and switching between OpenSSH keys seamlessly
 
 ## Installation
 
@@ -27,46 +27,53 @@ $ gem install ssh_key_switcher
 
 ## Usage
 
+### Show Help
+
+```bash
+$ sks -h [--help]
+
+```
+
 ### Show Version
 
 ```bash
-$ ssh_key_switcher version [-v --version]
+$ sks -v [--version]
 
 ```
 
 Displays the current version of SSH Key Switcher.
 
-### Ping Servers
+### Ping Server
 
 ```bash
-$ ssh_key_switcher ping [-p --ping]
+$ sks -p [--ping]
 
 ```
 
 Tests the connection to servers listed in **`SshKeySwitcher::Contains::SERVER_NAMES`**.
 
-### Select SSH Key
+### Select OpenSSH Key
 
 ```bash
-$ ssh_key_switcher select [-s --select]
+$ sks -s [--select]
 
 ```
 
 Allows you to interactively select and set an OpenSSH key for your sessions.
 
-### List Active SSH Keys
+### List Active OpenSSH Keys
 
 ```bash
-$ ssh_key_switcher current [-c --current]
+$ sks -c [--current]
 
 ```
 
 Displays a list of currently active SSH keys.
 
-### Remove SSH Key
+### Remove OpenSSH Key
 
 ```bash
-$ ssh_key_switcher remove [-r --remove]
+$ sks --rm [--remove]
 
 ```
 
@@ -74,7 +81,7 @@ Interactive prompt to remove an OpenSSH key from the list of managed keys.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [SSH Key Switcher](https://github.com/minhtang1/ssh_key_switcher).
+Bug reports and pull requests are welcome on GitHub at [SSH Key Switcher](https://github.com/TOMOSIA-VIETNAM/ssh_key_switcher).
 
 ## License
 

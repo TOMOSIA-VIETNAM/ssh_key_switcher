@@ -29,7 +29,7 @@ module SshKeySwitcher
       SshKeySwitcher::Options::Select.add(path_open_ssh_key)
     end
 
-    desc 'current [-s, --current]', 'List of active OpenSSH keys'
+    desc 'current [-c, --current]', 'List of active OpenSSH keys'
     map %w[-c --current] => :current
     def current
       SshKeySwitcher::Options::CurrentAgent.display
