@@ -2,6 +2,9 @@
 
 A simple and efficient Ruby gem for managing and switching between OpenSSH keys seamlessly
 
+![Preview](https://github.com/TOMOSIA-VIETNAM/ssh_key_switcher/blob/master/asset/demo.gif?raw=true "Preview")
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -81,7 +84,7 @@ Interactive prompt to remove an OpenSSH key from the list of managed keys.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [SSH Key Switcher](https://github.com/TOMOSIA-VIETNAM/ssh_key_switcher).
+Bug reports and pull requests are welcome on GitHub at [SSH Key Switcher](https://github.com/TOMOSIA-VIETNAM/ssh_key_switcher/issues).
 
 ## License
 
@@ -92,3 +95,16 @@ The gem is available as open source under the terms of the [MIT License](https:/
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+
+## Contributor
+
+**Minh Tang Q. <minh.tang@tomosia.com>**
+
+## About [TOMOSIA VIET NAM CO., LTD](https://www.tomosia.com/)
+
+A company that creates new value together with customers and lights the light of happiness
+
+【一緒に】【ハッピー】【ライトアップ】
+
+お客様と共に新たな価値を生み出し幸せの明かりを灯す会社、トモシア
