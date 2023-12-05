@@ -7,7 +7,7 @@ module SshKeySwitcher
         def fetch_results
           results = []
           payload = Cmd.exec('ssh-add -l')[0]
-          payload.each_line { |line| results << line.split[-2..].join(' ') }
+          payload.each_line { |line| results << line.split.last(2).join(' ') }
           results
         end
 

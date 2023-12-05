@@ -2,6 +2,11 @@
 
 VERSION=$1
 
+if [ -z "$VERSION" ]; then
+  printf "\e[31mError: No version provided\e[0m\n"
+  exit 1
+fi
+
 printf "module SshKeySwitcher\n  VERSION = \"$VERSION\"\nend\n" > ./lib/ssh_key_switcher/version.rb
 bundle
 git add Gemfile.lock lib/ssh_key_switcher/version.rb
