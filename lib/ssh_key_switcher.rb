@@ -10,6 +10,8 @@ module SshKeySwitcher
   class Error < StandardError; end
 
   class CLI < Thor
+    ENV['THOR_SILENCE_DEPRECATION'] = 'true'
+
     desc 'version [-v, --version]', 'Show version'
     map %w[-v --version] => :version
     def version

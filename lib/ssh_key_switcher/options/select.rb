@@ -46,7 +46,7 @@ module SshKeySwitcher
 
         def select_choices(menu, keys)
           keys.each do |value|
-            display_text = value.split('/')[-2..].join('/').gsub('.ssh/', '')
+            display_text = value.split('/').last(2).join('/').gsub('.ssh/', '')
             menu.choice display_text, value
           end
         end

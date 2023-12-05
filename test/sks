@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'ssh_key_switcher'
+require 'bundler/setup'
+require_relative '../lib/ssh_key_switcher'
 
 # Prevent failures from being reported twice.
 Thread.report_on_exception = false
