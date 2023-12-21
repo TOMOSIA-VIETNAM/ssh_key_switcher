@@ -31,6 +31,12 @@ module SshKeySwitcher
       SshKeySwitcher::Options::Select.add(path_open_ssh_key)
     end
 
+    desc 'list [-l, --list]', 'List of OpenSSH key files'
+    map %w[-l --list] => :list
+    def list
+      SshKeySwitcher::Options::List.display
+    end
+
     desc 'current [-c, --current]', 'List of active OpenSSH keys'
     map %w[-c --current] => :current
     def current

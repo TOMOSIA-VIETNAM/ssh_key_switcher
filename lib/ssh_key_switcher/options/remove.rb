@@ -5,7 +5,7 @@ module SshKeySwitcher
     class Remove
       class << self
         def display_select
-          keys = Helper.find_open_ssh_keys
+          keys = Helper.find_ssh_keys
           if keys.empty?
             prompt.error('No OpenSSH keys found in ~/.ssh')
             nil
