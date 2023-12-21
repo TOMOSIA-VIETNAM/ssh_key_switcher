@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ssh_key_switcher (1.0.2)
+    ssh_key_switcher (1.0.4)
       thor (~> 1.2.0)
       tty-prompt (~> 0.23.0)
 
@@ -51,4 +51,3 @@ PLATFORMS
 DEPENDENCIES
   rubocop
   ssh_key_switcher!
-

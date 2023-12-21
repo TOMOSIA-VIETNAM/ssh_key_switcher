@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=$(awk -F'"' '/VERSION =/ {print $2}' lib/ssh_key_switcher/version.rb)
+VERSION=$1
 gemname="ssh_key_switcher"
 package="${gemname}-$VERSION.gem"
 
