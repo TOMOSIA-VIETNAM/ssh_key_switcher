@@ -3,8 +3,8 @@
 module SshKeySwitcher
   module Utils
     class SshAgent
-      def self.add(key)
-        Cmd.exec("ssh-add #{key}")
+      def self.add(private_key)
+        Cmd.exec("ssh-add #{private_key}")
       end
 
       def self.remove_all

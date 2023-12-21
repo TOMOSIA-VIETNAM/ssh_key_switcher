@@ -5,20 +5,21 @@ module SshKeySwitcher
     class Select
       class << self
         def display_select
-          ssh_keys = Helper.find_open_ssh_keys
+          ssh_keys = Helper.find_ssh_keys
           if ssh_keys.empty?
-            prompt.error('No OpenSSH keys found in ~/.ssh')
+            prompt.error("No OpenSSH keys found in #{SSH_DIR}")
             nil
           else
             prompt.select('Select an OpenSSH key:', select_options) do |menu|
               menu.enum '.'
               select_choices(menu, ssh_keys)
             end
-
           end
         end
 
         def add(path_open_ssh_key)
+          return if path_open_ssh_key.nil?
+
           SshKeySwitcher::Utils::SshAgent.remove_all
           SshKeySwitcher::Utils::SshAgent.add(path_open_ssh_key)
           prompt.ok('OpenSSH key added successfully!')
@@ -44,10 +45,10 @@ module SshKeySwitcher
           }
         end
 
-        def select_choices(menu, keys)
-          keys.each do |value|
-            display_text = value.split('/').last(2).join('/').gsub('.ssh/', '')
-            menu.choice display_text, value
+        def select_choices(menu, ssh_keys)
+          ssh_keys.each do |key|
+            display_text = Helper.filename(key)
+            menu.choice display_text, key
           end
         end
       end
