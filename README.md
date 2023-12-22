@@ -67,7 +67,7 @@ Allows you to interactively select and set an OpenSSH key for your sessions.
 ### List of OpenSSH Keys
 
 ```bash
-$ sks -c [--current]
+$ sks -l [--list]
 
 ```
 
