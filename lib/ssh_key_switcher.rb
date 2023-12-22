@@ -10,6 +10,8 @@ module SshKeySwitcher
   class Error < StandardError; end
 
   class CLI < Thor
+    ENV['THOR_SILENCE_DEPRECATION'] = 'true'
+
     desc 'version [-v, --version]', 'Show version'
     map %w[-v --version] => :version
     def version
@@ -27,6 +29,12 @@ module SshKeySwitcher
     def select
       path_open_ssh_key = SshKeySwitcher::Options::Select.display_select
       SshKeySwitcher::Options::Select.add(path_open_ssh_key)
+    end
+
+    desc 'list [-l, --list]', 'List of OpenSSH key files'
+    map %w[-l --list] => :list
+    def list
+      SshKeySwitcher::Options::List.display
     end
 
     desc 'current [-c, --current]', 'List of active OpenSSH keys'

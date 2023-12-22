@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+gemname="ssh_key_switcher"
+package="${gemname}-$VERSION.gem"
+
+if [ -z "$VERSION" ]; then
+  printf "\e[31mError: No version provided\e[0m\n"
+  exit 1
+fi
+
+printf "Build package $gemname\n"
+rm $package
+gem build ssh_key_switcher.gemspec
+
+printf "Uninstall gem $package\n"
+gem uninstall $gemname
+
+printf "Install gem $package\n"
+gem install $package
+
+rm "ssh_key_switcher-$VERSION.gem"
