@@ -5,7 +5,6 @@ module SshKeySwitcher
     class List
       class << self
         def display
-          binding.irb
           ssh_keys = Helper.find_ssh_keys
           if ssh_keys.empty?
             prompt.error("No OpenSSH keys found in #{SSH_DIR}")

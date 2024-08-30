@@ -7,12 +7,8 @@ module SshKeySwitcher
     module Cmd
       module_function
 
-      def exec(command, opts = {})
+      def exec(command, _opts = {})
         stdout, stderr, status = Open3.capture3(command)
-        if opts[:print]
-          print stderr
-          print stdout
-        end
         [stdout, stderr, status]
       end
     end

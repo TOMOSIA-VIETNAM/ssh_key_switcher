@@ -10,6 +10,7 @@ module SshKeySwitcher
   class Error < StandardError; end
 
   class CLI < Thor
+    SshKeySwitcher::Utils::SshAgent.start_ssh_agent_if_needed
     ENV['THOR_SILENCE_DEPRECATION'] = 'true'
 
     desc 'version [-v, --version]', 'Show version'

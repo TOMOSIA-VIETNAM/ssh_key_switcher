@@ -15,7 +15,7 @@ module SshKeySwitcher
 
       def fetch_private_ssh_keys_via_header
         ssh_dir = File.expand_path(SSH_DIR)
-        files = Dir.glob("#{ssh_dir}/**/*").select do |file|
+        Dir.glob("#{ssh_dir}/**/*").select do |file|
           next if File.directory?(file)
 
           File.open(file, 'rb') do |f|
