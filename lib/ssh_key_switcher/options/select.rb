@@ -21,8 +21,10 @@ module SshKeySwitcher
           return if path_open_ssh_key.nil?
 
           SshKeySwitcher::Utils::SshAgent.remove_all
-          SshKeySwitcher::Utils::SshAgent.add(path_open_ssh_key)
-          prompt.ok('OpenSSH key added successfully!')
+          _stdout, stderr, status = SshKeySwitcher::Utils::SshAgent.add(path_open_ssh_key)
+          return prompt.ok('Add OpenSSH key successfully!') if status.success?
+
+          prompt.error(stderr)
         end
 
         private

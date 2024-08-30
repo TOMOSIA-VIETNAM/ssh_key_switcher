@@ -7,7 +7,10 @@ module SshKeySwitcher
         def pong
           server_names = SERVER_NAMES.map { |server| "git@#{server}" }
           result = prompt.select('Connect to', server_names, default: 'git@github.com')
-          Cmd.exec("ssh -T #{result}", print: true)
+          stdout, stderr, status = Cmd.exec("ssh -T #{result}")
+          return prompt.ok(stdout) if status.success?
+
+          prompt.error(stderr)
         end
 
         private
